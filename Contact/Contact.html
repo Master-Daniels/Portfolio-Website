@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="../index/index.css" />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/aca7d2a687.js"
+      crossorigin="anonymous"
+    ></script>
+    <style media="screen">
+      #contact {
+        width: 100%;
+        height: 100%;
+      }
+      .section-header {
+        text-align: center;
+        margin: 0 auto;
+        padding: 10px 0;
+        font-size: 60px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-family: "Poppins", sans-serif;
+      }
+      .contact-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 20px;
+        position: relative;
+        max-width: 1000px;
+      }
+
+      /* Left contact page */
+      .form-horizontal {
+        max-width: 600px;
+        font-weight: 400;
+      }
+
+      .form-control,
+      textarea {
+        min-width: 400px;
+        background-color: hsl(255, 70%, 8%, 0.01);
+        color: white;
+        letter-spacing: 1px;
+        outline: none;
+        border: 1px solid white;
+        border-radius: 10px;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        font-family: "Poppins", sans-serif;
+      }
+      .form-control::placeholder,
+      textarea::placeholder {
+        font-size: larger;
+        color: white;
+      }
+
+      .form-control:active,
+      textarea:active {
+        background: transparent;
+      }
+      .send-button {
+        margin-top: 15px;
+        height: 49px;
+        width: 400px;
+        color: white;
+        font-size: xx-large;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        background-color: #4267b2;
+        cursor: pointer;
+      }
+
+      .alt-send-button {
+        width: 400px;
+        height: 34px;
+        transition: all 500ms ease-in-out;
+      }
+
+      .send-text {
+        display: block;
+        margin-top: 10px;
+        font: 700 12px sans-serif;
+        letter-spacing: 2px;
+        color: white;
+      }
+
+      .alt-send-button:hover {
+        transform: translate3d(0px, -40px, 0px);
+      }
+
+      /* Begin Right Contact Page */
+      .direct-contact-container {
+        max-width: 400px;
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+        padding: 0px 35px;
+      }
+
+      /* Location, Phone, Email Section */
+      .contact-list {
+        list-style-type: none;
+        margin-left: -30px;
+        padding-right: 20px;
+      }
+
+      .list-item {
+        line-height: 6;
+        color: white;
+      }
+
+      .contact-text {
+        font-size: 15px;
+        letter-spacing: 1px;
+        color: white;
+      }
+
+      .place {
+        margin-left: 62px;
+      }
+
+      .phone {
+        margin-left: 56px;
+      }
+
+      .gmail {
+        margin-left: 53px;
+      }
+
+      .contact-text a {
+        color: white;
+        text-decoration: none;
+        transition-duration: 0.2s;
+      }
+
+      .contact-text a:hover {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Social Media Icons */
+      .social-media-list {
+        position: relative;
+        font-size: 22px;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      .social-media-list li a {
+        color: white;
+      }
+
+      .social-media-list li {
+        position: relative;
+        display: inline-block;
+        height: 60px;
+        width: 60px;
+        margin: 10px 5px;
+        line-height: 60px;
+        border-radius: 50%;
+        color: white;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .social-media-list li:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 50%;
+        opacity: 0;
+        box-shadow: 0 0 0 1px white;
+        transition: all 600ms ease-in-out;
+      }
+
+      .social-media-list li:hover {
+        background-color: white;
+      }
+
+      .social-media-list li:hover:after {
+        opacity: 1;
+        transform: scale(1.12);
+        transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+      }
+
+      .social-media-list li:hover a {
+        color: #000;
+      }
+      hr {
+        border-color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Begin Media Queries*/
+      @media screen and (max-width: 850px) {
+        .contact-wrapper {
+          display: flex;
+          flex-direction: column;
+        }
+        .direct-contact-container,
+        .form-horizontal {
+          margin: 0 auto;
+        }
+
+        .direct-contact-container {
+          margin-top: 60px;
+          padding: 1rem;
+        }
+        .social-media-list li {
+          height: 60px;
+          width: 60px;
+          line-height: 60px;
+        }
+        .social-media-list li:after {
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+        }
+      }
+
+      @media screen and (max-width: 569px) {
+        .direct-contact-container,
+        .form-wrapper {
+          float: none;
+          margin: 0 auto;
+        }
+        .form-control,
+        textarea {
+          margin: 0 auto;
+        }
+
+        .name,
+        .email,
+        textarea {
+          width: 280px;
+        }
+
+        .direct-contact-container {
+          margin-top: 60px;
+          max-width: 280px;
+        }
+        .social-media-list {
+          left: 0;
+        }
+        .social-media-list li {
+          height: 55px;
+          width: 55px;
+          line-height: 55px;
+          font-size: 2rem;
+        }
+        .social-media-list li:after {
+          width: 55px;
+          height: 55px;
+          line-height: 55px;
+        }
+      }
+
+      @media screen and (max-width: 410px) {
+        .send-button {
+          width: 99%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <ul class="bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </section>
+    <header>
+      <nav class="flex">
+        <img src="../Logo.jpeg" alt="Site Logo" width="80px" />
+        <ul class="flex ff-sans-cond uppercase underline-indicators">
+          <li><a href="../index/index.html"> About Me</a></li>
+          <li><a href="../Registration/Registraton.html">Registration</a></li>
+          <li><a href="../login/Login.html">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="contact">
+        <h1 class="section-header">Contact Me</h1>
+
+        <div class="contact-wrapper">
+          <!-- Left contact page -->
+
+          <form id="contact-form" class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Name"
+                  name="name"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  name="email"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+
+            <textarea
+              class="form-control"
+              rows="10"
+              placeholder="Your Message"
+              name="message"
+              required
+            ></textarea>
+
+            <button
+              class="btn btn-primary send-button"
+              id="submit"
+              type="submit"
+              value="SEND"
+            >
+              <div class="alt-send-button">
+                <i class="fa fa-paper-plane"></i
+                ><span class="send-text">SEND</span>
+              </div>
+            </button>
+          </form>
+
+          <!-- Left contact page -->
+
+          <div class="direct-contact-container">
+            <ul class="contact-list">
+              <li class="list-item">
+                <i class="fa fa-map-marker fa-2x"
+                  ><span title="Find me at" class="contact-text place">Ikeja, Lagos</span></i
+                >
+              </li>
+
+              <li class="list-item">
+                <i class="fa fa-phone fa-2x"
+                  ><span class="contact-text phone"
+                    ><a href="tel:+234 8071979393" title="Give me a call"
+                      >+234 8071979393</a
+                    ></span
+                  ></i
+                >
+              </li>
+
+              <li class="list-item">
+                <i class="fa fa-envelope fa-2x"
+                  ><span class="contact-text gmail"
+                    ><a
+                      href="mailto:blurrydan01@gmail.com"
+                      title="Send me an email"
+                      >blurrydan01@gmail.com</a
+                    ></span
+                  ></i
+                >
+              </li>
+            </ul>
+            <br />
+            <hr />
+            <ul class="social-media-list">
+              <li>
+                <a href="#" target="_blank" class="contact-icon">
+                  <i class="fab fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" class="contact-icon">
+                  <i class="fab fa-linkedin" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" class="contact-icon">
+                  <i class="fab fa-twitter" aria-hidden="true"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#" target="_blank" class="contact-icon">
+                  <i class="fab fa-instagram" aria-hidden="true"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a href="#"><span>Facebook</span></a>
+      <a href="#"><span>Twitter</span></a>
+      <a href="#"><span>Google+</span></a>
+      <a href="#"><span>Github</span></a>
+      <a href="#"><span>Linkedin</span></a>
+      <a href="#"><span>Instagram</span></a>
+      <p>Master Daniels&copy; 2022, FOR ZURI X INGRESSIVE4U</p>
+       <input
+        style="cursor: pointer"
+        type="button"
+        value="View code on Github"
+        onclick="window.location.href='https://www.wherever.com'"
+      />
+    </footer>
+  </body>
+</html>
